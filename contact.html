@@ -1,4 +1,4 @@
-!doctype html>
+<!doctype html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -13,10 +13,54 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
+              
             </nav>
         </header>
         <main>
-            <p>If you'd like to get in touch, feel free to email me at <a href="Maxwell@gmail.com">Maxwell@gamail.com</a></p>
+            <section aria-labelledby="contact-heading" class="mb-5 text-center">
+                <h2 id="contact-heading">Contact Us</h2>
+                <p class="lead">Have a question or need help? We'd love to hear from you!</p>
+              </section>
+          
+              <section class="row">
+                <article class="col-md-6" aria-labelledby="form-heading">
+                  <h3 id="form-heading">Get in Touch</h3>
+                  <form action="#" method="post">
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Your Name:</label>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Your Email:</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message" class="form-label">Your Message:</label>
+                      <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                  </form>
+                </article>
+          
+                <article class="col-md-6 mt-4 mt-md-0" aria-labelledby="info-heading">
+                  <h3 id="info-heading">Contact Information</h3>
+                  <address>
+                    <p><strong>Email:</strong> <a href="mailto:support@maxwelltechstore.com">support@maxwelltechstore.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+26771234567">+267 7123 4567</a></p>
+                    <p><strong>Location:</strong> Gaborone, Botswana</p>
+                    <p><strong>Hours:</strong> Mon - Sat: 9:00 AM - 6:00 PM</p>
+                  </address>
+          
+                  <section aria-labelledby="social-heading" class="mt-4">
+                    <h4 id="social-heading">Follow Us</h4>
+                    <ul class="list-unstyled d-flex gap-3">
+                      <li><a href="#" class="text-decoration-none">Facebook</a></li>
+                      <li><a href="#" class="text-decoration-none">Instagram</a></li>
+                      <li><a href="#" class="text-decoration-none">WhatsApp</a></li>
+                    </ul>
+                  </section>
+                </article>
+              </section>
         </main>
         <footer>
             <P>&copy;2025 Maxwell</P>

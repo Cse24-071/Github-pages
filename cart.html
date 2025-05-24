@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
+        <title>cart</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="cart-page">
+        <header>
+            <h1>CART</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="cart.html" class="cart-link">
+                    
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h2>Your Cart Items</h2>
+                <ul id="cartItems"></ul>
+                <p id="total"></p>
+            </section>
+
+            
+        </main>
+        
+ 
+ <script>
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cartItems = document.getElementById('cartItems');
+  const totalEl = document.getElementById('total');
+
+  function showCart() {
+    cartItems.innerHTML = "";
+    if (cart.length === 0) {
+      cartItems.innerHTML = "<li>Your cart is empty.</li>";
+      totalEl.textContent = "";
+      return;
+    }
+
+    let total = 0;
+    cart.forEach((item, i) => {
+      total += item.price;
+      cartItems.innerHTML += `<li>${item.name} - BWP ${item.price} 
+        <button onclick="removeItem(${i})">Remove</button></li>`;
+    });
+    totalEl.textContent = `Total: BWP ${total}`;
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1); // Remove item at index
+    localStorage.setItem('cart', JSON.stringify(cart));
+    showCart();
+  }
+
+  showCart(); // Show cart on page load
+</script>
+
+    </body>
+</html>

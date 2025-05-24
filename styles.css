@@ -1,28 +1,89 @@
+
 body{
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    
+    font-family: sans-serif;
+    background-color: ;
+    height: 100%;
+
 }
-header{
-    background-color: #8d928d;
-    color: white;
+
+  
+header {
+    background-image: url('IMAGES/evgeny-opanasenko-dh2VUtetmZw-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    color: rgb(0, 0, 0);
     padding: 20px;
     text-align: center;
+    border-radius: 5px;
 }
+
 header h1{
     margin: 0;
 }
+
+body.accessories-page header {
+  background-image: url('IMAGES/i-m-zion-H10CdHCbxFM-unsplash 3.jpg');
+  background-size: cover;
+  background-position: center;
+
+
+}
+body.Android-page header {
+  background-image: url('IMAGES/evgeny-opanasenko-H8-mb0OBx6s-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+
+
+}
+body.iPhone-page header {
+  background-image: url('IMAGES/branislav-rodman-Bt_Nds4n7UY-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+
+
+}
+
+body.cart-page header {
+  background-image: url('IMAGES/pexels-ivan-samkov-7621354.jpg');
+  background-size: cover;
+  background-position: center;
+
+
+}
+
+
+  .dropdown-toggle {
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  float: left;
+  position: relative;
+  z-index: 2;
+}
+
+  .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  min-width: 160px;
+  top: calc(27% + 10px); 
+
+  }
+
+
 nav a {
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     margin: 0 10px;
+     
 }
-nav a=hover {
-    text-decoration=underline=
-}
+
+
 main {
     padding: 20px;
     max-width: 800px;
@@ -31,34 +92,65 @@ main {
 main img{
     max-width: 100%;
     height: auto;
-    display: block;
+    display: flex;
     margin: 20px 0;
 }
 footer {
-    background-color: #333;
+    background-color: #babbb7;
     color: white;
     text-align: center;
-    padding: 10px;
     position: fixed;
-    bottom: 0;
-    width: 100%;
+    border-radius: 5px;
+    position: sticky;
 }
 p {
     font-size: 1.1em;
 }
-a {
-    color: #8c998c;
-    text-decoration: none;
-}
+
 a:hover {
     text-decoration: underline;
 }
-img{
-    border: 5px solid #4CAF50;
-    border-radius: 10px;
+
+
+.Gallery{
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+justify-content: space-between;
+
 }
-main a[href="Maxwell"] {
-    color: #ff5722;
-    font-weight: bold;
+.container {
+    background-color: rgb(252, 248, 248);
+}
+.product{
+    background-color: rgb(252, 248, 248);
+    border-radius: 10px;
+    border: 1px #d6e0d6;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 220px;
+    margin-left: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+
+}
+.product img{
+    width: auto;
+    height: auto;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    
+    
 }
 
+.product button{
+background-color: rgb(201, 198, 198);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+border-radius: 5px;
+}
