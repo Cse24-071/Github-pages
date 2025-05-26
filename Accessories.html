@@ -10,22 +10,21 @@
 
 <body class="accessories-page">
 
-  <!-- HEADER -->
   <header>
     <h1>Maxwell Tech Store</h1>
-    <nav class="bg-transparent p-3">
-      <ul class="nav justify-content-center">
-        <li><a href="index.html" class="nav-link text-white">Home</a></li>
-        <li><a href="iPhones.html" class="nav-link text-white">iPhones</a></li>
-        <li><a href="Android.html" class="nav-link text-white">Android Phones</a></li>
-        <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
-         <li><a href="cart.html"class="nav-link text-white">Cart</a></li>
-      </ul>
-    </nav>
+       <nav class="bg-transparent p-3">
+                <ul class="nav justify-content-center">
+                    <li><a href="index.html" class="nav-link text-white">Home</a></li>
+                    <li><a href="iPhones.html" class="nav-link text-white">iPhones</a></li>
+                    <li><a href="Android.html" class="nav-link text-white">Android Phones</a></li>
+                    <li><a href="contact.html" class="nav-link text-white">Contact</a></li>
+                    <li><a href="cart.html"class="nav-link text-white">Cart</a></li>
+                </ul>
+       </nav>
     
 <form onsubmit="searchProducts(event)">
-  <input id="searchInput" placeholder="Search products..." />
-  <button type="submit">Search</button>
+        <input id="searchInput" placeholder="Search products..." />
+        <button type="submit">Search</button>
 </form>
 <p id="notFound" style="display:none; color:red;">Product not found.</p>
 
@@ -36,28 +35,28 @@
     <h2>🎧 Accessories</h2>
 
     <p>Get phone cases, chargers, AirPods, and more accessories.</p>
-    <section class="Gallery accessories d-flex flex-wrap gap-3">
+       <section class="Gallery accessories d-flex flex-wrap gap-3">
 
          <section id="AccessoriesSection" class="Gallery Accessories hidden">
+                <article class="product">
+                    <p>Apple watch SE </p>
+                    <img src="https://i.pinimg.com/736x/20/29/d5/2029d51d3f51b028d6f0d4b7bab3c44d.jpg">
+                    <p>BWP1,000</p>
+                    <button onclick="addtoCart('Apple watch SE',1000)">Buy now</button>
+                </article>  
+
       <article class="product">
-        <p>Apple watch SE </p>
-        <img src="https://i.pinimg.com/736x/20/29/d5/2029d51d3f51b028d6f0d4b7bab3c44d.jpg">
-        <p>BWP1,000</p>
-        <button onclick="addtoCart('Apple watch SE',1000)">Buy now</button>
+            <p>Apple Air pods</p>
+                <img src="https://i.pinimg.com/736x/22/0d/22/220d22fc01e18baeb45b375ad49699cf.jpg">
+                <p>BWP800</p>
+                <button onclick="addtoCart('Apple Air pods',800)">Buy now</button>
       </article>  
 
       <article class="product">
-      <p>Apple Air pods</p>
-        <img src="https://i.pinimg.com/736x/22/0d/22/220d22fc01e18baeb45b375ad49699cf.jpg">
-        <p>BWP800</p>
-        <button onclick="addtoCart('Apple Air pods',800)">Buy now</button>
-      </article>  
-
-      <article class="product">
-      <p>SONY pods</p>
-        <img src="https://i.pinimg.com/736x/8a/6e/24/8a6e24eba0243ff426c1316a8889bc20.jpg">
-        <p>BWP800</p>
-        <button onclick="addtoCart('SONY pods',800)">Buy now</button>
+            <p>SONY pods</p>
+                <img src="https://i.pinimg.com/736x/8a/6e/24/8a6e24eba0243ff426c1316a8889bc20.jpg">
+                <p>BWP800</p>
+                <button onclick="addtoCart('SONY pods',800)">Buy now</button>
       </article>  
     </section>
 
