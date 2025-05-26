@@ -9,10 +9,8 @@ body{
 
   
 header {
-    background-image: url('IMAGES/evgeny-opanasenko-dh2VUtetmZw-unsplash.jpg');
+    background-color: #278783;
     background-position: center;
-    background-size: cover;
-    height: 100vh;
     color: rgb(0, 0, 0);
     padding: 20px;
     text-align: center;
@@ -55,10 +53,11 @@ body.cart-page header {
 
 
   .dropdown-toggle {
-  background-color: #333;
+  background-color: #686868;
   color: white;
   padding: 10px 15px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   float: left;
@@ -96,7 +95,7 @@ main img{
     margin: 20px 0;
 }
 footer {
-    background-color: #babbb7;
+    background-color: #1c1c1e;
     color: white;
     text-align: center;
     position: fixed;
