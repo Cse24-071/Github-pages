@@ -1,60 +1,88 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
-        <title>cart</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body class="cart-page">
-        <header>
-            <h1>CART</h1>
-           <nav class="bg-transparent p-3">
-                    <a href="index.html">Home</a>
-                    
-       </nav>
-        </header>
-        <main>
-            <section>
-                <h2>Your Cart Items</h2>
-                <ul id="cartItems"></ul>
-                <p id="total"></p>
-            </section>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Cart</h1>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+    </header>
 
-            
-        </main>
-        
- 
- <script>
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const cartItems = document.getElementById('cartItems');
-  const totalEl = document.getElementById('total');
+    <main>
+      <section>
+        <h2>Your Cart Items</h2>
+        <ul id="cartItems"></ul>
+        <p id="total"></p>
+        <button id="checkoutBtn">Checkout</button>
+        <p id="message" style="color: green;"></p>
+      </section>
+    </main>
 
-  function showCart() {
-    cartItems.innerHTML = "";
-    if (cart.length === 0) {
-      cartItems.innerHTML = "<li>Your cart is empty.</li>";
-      totalEl.textContent = "";
-      return;
-    }
+    <script>
+      // Get cart from localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    let total = 0;
-    cart.forEach((item, i) => {
-      total += item.price;
-      cartItems.innerHTML += `<li>${item.name} - BWP ${item.price} 
-        <button onclick="removeItem(${i})">Remove</button></li>`;
-    });
-    totalEl.textContent = `Total: BWP ${total}`;
-  }
+      let cartItems = document.getElementById("cartItems");
+      let total = document.getElementById("total");
+      let checkoutBtn = document.getElementById("checkoutBtn");
+      let message = document.getElementById("message");
 
-  function removeItem(index) {
-    cart.splice(index, 1); // Remove item at index
-    localStorage.setItem('cart', JSON.stringify(cart));
-    showCart();
-  }
+      // Show cart items
+      function showCart() {
+        cartItems.innerHTML = "";
+        let sum = 0;
 
-  showCart(); // Show cart on page load
-</script>
+        if (cart.length === 0) {
+          cartItems.innerHTML = "<li>Your cart is empty.</li>";
+          total.textContent = "";
+          checkoutBtn.style.display = "none";
+          return;
+        }
 
-    </body>
+        for (let i = 0; i < cart.length; i++) {
+          let item = cart[i];
+          sum += item.price;
+
+          let li = document.createElement("li");
+          li.textContent = item.name + " - BWP " + item.price;
+
+          let btn = document.createElement("button");
+          btn.textContent = "Remove";
+          btn.onclick = function() {
+            removeItem(i);
+          };
+
+          li.appendChild(btn);
+          cartItems.appendChild(li);
+        }
+
+        total.textContent = "Total: BWP " + sum;
+        checkoutBtn.style.display = "inline-block";
+      }
+
+      // Remove item from cart
+      function removeItem(index) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        showCart();
+      }
+
+      // Checkout
+      checkoutBtn.onclick = function() {
+        localStorage.removeItem("cart");
+        cart = [];
+        showCart();
+        message.textContent = "Thank you! Your order has been placed.";
+      };
+
+      // Load cart on page
+      showCart();
+    </script>
+  </body>
 </html>
